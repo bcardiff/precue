@@ -6,17 +6,24 @@
 //  Copyright © 2016 bcardiff. All rights reserved.
 //
 
-#import "MainWindow.h"
+#import "MainView.h"
 
-@implementation MainWindow
+@implementation MainView
 
-- (instancetype)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
-    if (self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag]){
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    if (self = [super initWithCoder:coder]) {
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
     }
     return self;
 }
 
+- (instancetype)initWithFrame:(NSRect)frameRect {
+    if (self = [super initWithFrame:frameRect]) {
+        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
+    }
+    return self;
+}
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;

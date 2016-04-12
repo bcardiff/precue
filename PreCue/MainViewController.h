@@ -1,19 +1,20 @@
 //
-//  WindowController.h
+//  ViewController.h
 //  PreCue
 //
-//  Created by Brian J. Cardiff on 4/11/16.
+//  Created by Brian J. Cardiff on 2/27/16.
 //  Copyright © 2016 bcardiff. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import "EZAudio/EZAudioPlayer.h"
-#import "MainWindow.h"
+#import "MainView.h"
 
-@interface WindowController : NSWindowController <EZAudioPlayerDelegate, MainWindowDelegate>
+@interface MainViewController : NSViewController <EZAudioPlayerDelegate, MainViewDelegate>
 {
     EZAudioPlayer *player;
 }
 
 - (void)loadFile:(NSURL *)fileURL;
 @end
+

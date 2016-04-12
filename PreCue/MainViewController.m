@@ -6,20 +6,25 @@
 //  Copyright © 2016 bcardiff. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
+    player = [EZAudioPlayer audioPlayerWithDelegate:self];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+- (void)loadFile:(NSURL *)fileURL {
+    EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:fileURL];
+    [player playAudioFile:audioFile];
 }
 
 @end
