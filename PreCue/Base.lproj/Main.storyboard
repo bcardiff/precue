@@ -149,16 +149,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-Gf-aQi">
-                                <rect key="frame" x="14" y="107" width="81" height="32"/>
-                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmO-7v-nGi">
+                                <rect key="frame" x="14" y="107" width="150" height="32"/>
+                                <buttonCell key="cell" type="push" title="Play / Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmO-7v-nGi">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <accessibility description="sdf"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="play:" target="XfG-lQ-9wD" id="I7T-Gy-lz3"/>
+                                </connections>
                             </button>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ixs-8d-ffU">
                                 <rect key="frame" x="18" y="62" width="142" height="21"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="7z8-3L-kxQ"/>
+                                <connections>
+                                    <action selector="volumenMoved:" target="XfG-lQ-9wD" id="tdR-Jg-6xq"/>
+                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="volumenValue" id="tfh-zA-J9a"/>
+                                </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-fG-Rj4">
                                 <rect key="frame" x="18" y="89" width="57" height="17"/>
@@ -201,6 +208,7 @@
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="qXl-m8-fbZ"/>
             </objects>
             <point key="canvasLocation" x="151" y="597.5"/>
         </scene>

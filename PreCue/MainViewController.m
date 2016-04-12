@@ -14,6 +14,7 @@
     [super viewDidLoad];
 
     player = [EZAudioPlayer audioPlayerWithDelegate:self];
+    self.volumenValue = 100;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -25,6 +26,18 @@
 - (void)loadFile:(NSURL *)fileURL {
     EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:fileURL];
     [player playAudioFile:audioFile];
+}
+
+- (IBAction)play:(id)sender {
+    if (player.isPlaying) {
+        [player pause];
+    } else {
+        [player play];
+    }
+}
+
+-(IBAction)volumenMoved:(id)sender {
+    [player setVolume:self.volumenValue / 100.0];
 }
 
 @end

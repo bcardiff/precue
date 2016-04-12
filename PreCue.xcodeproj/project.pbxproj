@@ -122,12 +122,12 @@
 				80DF8DC41C82982E006DFBD4 /* AppDelegate.m */,
 				80DF8DC91C82982E006DFBD4 /* MainViewController.h */,
 				80DF8DCA1C82982E006DFBD4 /* MainViewController.m */,
+				80F099D71CBC4DA800362D46 /* MainView.h */,
+				80F099D81CBC4DA800362D46 /* MainView.m */,
 				80DF8DCC1C82982E006DFBD4 /* Assets.xcassets */,
 				80DF8DCE1C82982E006DFBD4 /* Main.storyboard */,
 				80DF8DD11C82982E006DFBD4 /* Info.plist */,
 				80DF8DC61C82982E006DFBD4 /* Supporting Files */,
-				80F099D71CBC4DA800362D46 /* MainView.h */,
-				80F099D81CBC4DA800362D46 /* MainView.m */,
 			);
 			path = PreCue;
 			sourceTree = "<group>";

@@ -16,5 +16,10 @@
 }
 
 - (void)loadFile:(NSURL *)fileURL;
+- (IBAction)play:(id)sender;
+
+@property (readwrite, assign) int volumenValue;
+-(IBAction)volumenMoved:(id)sender;
+
 @end
 
