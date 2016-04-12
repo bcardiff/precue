@@ -16,6 +16,12 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
+    player = [EZAudioPlayer audioPlayerWithDelegate:self];
 }
 
+- (void)loadFile:(NSURL *)fileURL {
+    EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:fileURL];
+    [player playAudioFile:audioFile];
+}
 @end

@@ -8,6 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol MainWindowDelegate < NSObject >
+
+- (void)loadFile:(NSURL *)fileURL;
+
+@end
+
 @interface MainWindow : NSWindow <NSDraggingDestination>
+
+@property (nonatomic, assign) IBOutlet id<MainWindowDelegate> mainDelegate;
 
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "EZAudio/EZAudioPlayer.h"
+#import "MainWindow.h"
 
-@interface WindowController : NSWindowController
+@interface WindowController : NSWindowController <EZAudioPlayerDelegate, MainWindowDelegate>
+{
+    EZAudioPlayer *player;
+}
 
+- (void)loadFile:(NSURL *)fileURL;
 @end

@@ -40,9 +40,8 @@
     NSPasteboard *pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSURLPboardType] ) {
-        NSURL *fileURL = [NSURL URLFromPasteboard:pboard];
-        NSLog(@"%@", fileURL);
-        // Perform operation using the file’s URL
+        NSURL *fileURL = [NSURL URLFromPasteboard:pboard];        
+        [self.mainDelegate loadFile:fileURL];
     }
     return YES;
 }
