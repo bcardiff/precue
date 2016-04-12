@@ -14,6 +14,9 @@
 		80DF8DD01C82982E006DFBD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DF8DCE1C82982E006DFBD4 /* Main.storyboard */; };
 		80DF8DDB1C82982E006DFBD4 /* PreCueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF8DDA1C82982E006DFBD4 /* PreCueTests.m */; };
 		80DF8DE61C82982F006DFBD4 /* PreCueUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF8DE51C82982F006DFBD4 /* PreCueUITests.m */; };
+		80F099D61CBC4CA100362D46 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F099D51CBC4CA100362D46 /* WindowController.m */; };
+		80F099D91CBC4DA800362D46 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F099D81CBC4DA800362D46 /* MainWindow.m */; };
+		870CBB9AB96FA8B4DFD0EAA3 /* libPods-PreCue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A5DC7A43F2FFA09F4F6CB4 /* libPods-PreCue.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,13 @@
 		80DF8DE11C82982E006DFBD4 /* PreCueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreCueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DF8DE51C82982F006DFBD4 /* PreCueUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreCueUITests.m; sourceTree = "<group>"; };
 		80DF8DE71C82982F006DFBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80F099D41CBC4CA100362D46 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		80F099D51CBC4CA100362D46 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		80F099D71CBC4DA800362D46 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		80F099D81CBC4DA800362D46 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		8EA6613AC16034D0BD443E5C /* Pods-PreCue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PreCue.release.xcconfig"; path = "Pods/Target Support Files/Pods-PreCue/Pods-PreCue.release.xcconfig"; sourceTree = "<group>"; };
+		C55F1034882C58428C70AF20 /* Pods-PreCue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PreCue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PreCue/Pods-PreCue.debug.xcconfig"; sourceTree = "<group>"; };
+		F1A5DC7A43F2FFA09F4F6CB4 /* libPods-PreCue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PreCue.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870CBB9AB96FA8B4DFD0EAA3 /* libPods-PreCue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DE24DE3414898D27ABD7ADB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C55F1034882C58428C70AF20 /* Pods-PreCue.debug.xcconfig */,
+				8EA6613AC16034D0BD443E5C /* Pods-PreCue.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		80DF8DB71C82982E006DFBD4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +103,8 @@
 				80DF8DD91C82982E006DFBD4 /* PreCueTests */,
 				80DF8DE41C82982E006DFBD4 /* PreCueUITests */,
 				80DF8DC11C82982E006DFBD4 /* Products */,
+				3DE24DE3414898D27ABD7ADB /* Pods */,
+				EBEFB423A274436B1B761AF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +129,10 @@
 				80DF8DCE1C82982E006DFBD4 /* Main.storyboard */,
 				80DF8DD11C82982E006DFBD4 /* Info.plist */,
 				80DF8DC61C82982E006DFBD4 /* Supporting Files */,
+				80F099D41CBC4CA100362D46 /* WindowController.h */,
+				80F099D51CBC4CA100362D46 /* WindowController.m */,
+				80F099D71CBC4DA800362D46 /* MainWindow.h */,
+				80F099D81CBC4DA800362D46 /* MainWindow.m */,
 			);
 			path = PreCue;
 			sourceTree = "<group>";
@@ -137,6 +163,14 @@
 			path = PreCueUITests;
 			sourceTree = "<group>";
 		};
+		EBEFB423A274436B1B761AF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1A5DC7A43F2FFA09F4F6CB4 /* libPods-PreCue.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80DF8DEA1C82982F006DFBD4 /* Build configuration list for PBXNativeTarget "PreCue" */;
 			buildPhases = (
+				E96E8CA5ABC38FA2E11715DE /* Check Pods Manifest.lock */,
 				80DF8DBC1C82982E006DFBD4 /* Sources */,
 				80DF8DBD1C82982E006DFBD4 /* Frameworks */,
 				80DF8DBE1C82982E006DFBD4 /* Resources */,
+				1B4231C0E473C3209B2378B9 /* Embed Pods Frameworks */,
+				50FDFD478F7E10AB907B2E7B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,12 +298,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B4231C0E473C3209B2378B9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PreCue/Pods-PreCue-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50FDFD478F7E10AB907B2E7B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PreCue/Pods-PreCue-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E96E8CA5ABC38FA2E11715DE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80DF8DBC1C82982E006DFBD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				80DF8DCB1C82982E006DFBD4 /* ViewController.m in Sources */,
+				80F099D61CBC4CA100362D46 /* WindowController.m in Sources */,
+				80F099D91CBC4DA800362D46 /* MainWindow.m in Sources */,
 				80DF8DC81C82982E006DFBD4 /* main.m in Sources */,
 				80DF8DC51C82982E006DFBD4 /* AppDelegate.m in Sources */,
 			);
@@ -396,6 +483,7 @@
 		};
 		80DF8DEB1C82982F006DFBD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C55F1034882C58428C70AF20 /* Pods-PreCue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -408,6 +496,7 @@
 		};
 		80DF8DEC1C82982F006DFBD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EA6613AC16034D0BD443E5C /* Pods-PreCue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -489,6 +578,7 @@
 				80DF8DEC1C82982F006DFBD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80DF8DED1C82982F006DFBD4 /* Build configuration list for PBXNativeTarget "PreCueTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +587,7 @@
 				80DF8DEF1C82982F006DFBD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80DF8DF01C82982F006DFBD4 /* Build configuration list for PBXNativeTarget "PreCueUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +596,7 @@
 				80DF8DF21C82982F006DFBD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
