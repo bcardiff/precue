@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "EZAudio/EZAudioPlayer.h"
+#import "EZAudio/EZAudioDevice.h"
 #import "MainView.h"
 
 @interface MainViewController : NSViewController <EZAudioPlayerDelegate, MainViewDelegate>
 {
     EZAudioPlayer *player;
+    NSArray *inputDevices;
 }
 
 - (void)loadFile:(NSURL *)fileURL;
@@ -20,6 +22,13 @@
 
 @property (readwrite, assign) int volumenValue;
 -(IBAction)volumenMoved:(id)sender;
+
+@property (readwrite, assign) double trackFrames;
+@property (readwrite, assign) double trackCurrentFrame;
+
+@property (readwrite, retain) NSArray *outputDevices;
+@property (readwrite, retain) EZAudioDevice *selectedOutputDevice;
+- (IBAction)deviceChange:(id)sender;
 
 @end
 

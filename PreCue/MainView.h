@@ -11,11 +11,13 @@
 @protocol MainViewDelegate < NSObject >
 
 - (void)loadFile:(NSURL *)fileURL;
+- (void)seekFile:(double)position;
 
 @end
 
 @interface MainView : NSView <NSDraggingDestination>
 
 @property (nonatomic, assign) IBOutlet id<MainViewDelegate> mainDelegate;
+@property (nonatomic, assign) IBOutlet NSSlider* trackProgress;
 
 @end

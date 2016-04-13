@@ -149,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-Gf-aQi">
-                                <rect key="frame" x="14" y="107" width="150" height="32"/>
+                                <rect key="frame" x="14" y="107" width="114" height="32"/>
                                 <buttonCell key="cell" type="push" title="Play / Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmO-7v-nGi">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ixs-8d-ffU">
-                                <rect key="frame" x="18" y="62" width="142" height="21"/>
+                                <rect key="frame" x="18" y="62" width="255" height="21"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="7z8-3L-kxQ"/>
                                 <connections>
                                     <action selector="volumenMoved:" target="XfG-lQ-9wD" id="tdR-Jg-6xq"/>
@@ -183,27 +183,45 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWT-ZD-ggE">
-                                <rect key="frame" x="18" y="7" width="143" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="RiX-fA-OI1" id="SdX-S9-yFj">
+                            <slider verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-cL-RgF" userLabel="Track Position">
+                                <rect key="frame" x="277" y="12" width="337" height="21"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="VLO-Z1-3BH"/>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="trackCurrentFrame" previousBinding="FPe-oD-RDH" id="84c-AX-IaF"/>
+                                    <binding destination="XfG-lQ-9wD" name="maxValue" keyPath="trackFrames" id="FPe-oD-RDH"/>
+                                </connections>
+                            </slider>
+                            <popUpButton verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWT-ZD-ggE">
+                                <rect key="frame" x="18" y="7" width="256" height="26"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="SdX-S9-yFj">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="z9Y-5n-4ye">
                                         <items>
-                                            <menuItem title="Item 1" state="on" id="RiX-fA-OI1"/>
+                                            <menuItem title="Item 1" id="RiX-fA-OI1"/>
                                             <menuItem title="Item 2" id="Fma-lL-Avu"/>
                                             <menuItem title="Item 3" id="tnZ-gf-4g1"/>
                                         </items>
                                     </menu>
+                                    <connections>
+                                        <binding destination="XfG-lQ-9wD" name="selectedObject" keyPath="selectedOutputDevice" id="W64-m6-U3F"/>
+                                    </connections>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="deviceChange:" target="XfG-lQ-9wD" id="I9n-Ea-e6h"/>
+                                    <binding destination="XfG-lQ-9wD" name="content" keyPath="outputDevices" id="098-av-Mmp"/>
+                                    <binding destination="XfG-lQ-9wD" name="contentValues" keyPath="outputDevices.name" previousBinding="098-av-Mmp" id="zjS-iZ-A2i"/>
+                                    <binding destination="XfG-lQ-9wD" name="selectedObject" keyPath="selectedOutputDevice" previousBinding="zjS-iZ-A2i" id="Da4-pk-QQG"/>
+                                </connections>
                             </popUpButton>
-                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-cL-RgF">
-                                <rect key="frame" x="164" y="12" width="450" height="21"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="VLO-Z1-3BH"/>
-                            </slider>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1fm-cL-RgF" secondAttribute="trailing" constant="20" id="4tn-VG-Y9p"/>
+                            <constraint firstItem="1fm-cL-RgF" firstAttribute="leading" secondItem="KWT-ZD-ggE" secondAttribute="trailing" constant="8" id="oHK-AI-4qg"/>
+                        </constraints>
                         <connections>
                             <outlet property="mainDelegate" destination="XfG-lQ-9wD" id="Lge-dN-dJn"/>
+                            <outlet property="trackProgress" destination="1fm-cL-RgF" id="clv-M4-1bB"/>
                         </connections>
                     </view>
                 </viewController>

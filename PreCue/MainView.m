@@ -53,4 +53,12 @@
     return YES;
 }
 
+- (void)mouseDown:(NSEvent *)theEvent {
+    NSRect progressBounds = self.trackProgress.frame;
+    CGFloat x = theEvent.locationInWindow.x;
+    if (x >= NSMinX(progressBounds) && x <= NSMaxX(progressBounds)) {
+        [self.mainDelegate seekFile: (x - NSMinX(progressBounds)) / NSWidth(progressBounds)];
+    }
+}
+
 @end
