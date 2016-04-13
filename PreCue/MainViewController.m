@@ -23,7 +23,8 @@
 
     self.selectedOutputDevice = [EZAudioDevice currentOutputDevice];
     
-    self.volumenValue = 55;
+    self.volumenValue = 40;
+    [self volumenMoved: self];
     [self registerHotKeys];
 }
 
