@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807197701CBE9E5300569FAC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8071976F1CBE9E5300569FAC /* Carbon.framework */; };
 		80DF8DC51C82982E006DFBD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF8DC41C82982E006DFBD4 /* AppDelegate.m */; };
 		80DF8DC81C82982E006DFBD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF8DC71C82982E006DFBD4 /* main.m */; };
 		80DF8DCB1C82982E006DFBD4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DF8DCA1C82982E006DFBD4 /* MainViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8071976F1CBE9E5300569FAC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		80DF8DC01C82982E006DFBD4 /* PreCue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreCue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DF8DC31C82982E006DFBD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80DF8DC41C82982E006DFBD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807197701CBE9E5300569FAC /* Carbon.framework in Frameworks */,
 				870CBB9AB96FA8B4DFD0EAA3 /* libPods-PreCue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +164,7 @@
 		EBEFB423A274436B1B761AF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8071976F1CBE9E5300569FAC /* Carbon.framework */,
 				F1A5DC7A43F2FFA09F4F6CB4 /* libPods-PreCue.a */,
 			);
 			name = Frameworks;

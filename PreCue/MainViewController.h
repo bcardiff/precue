@@ -30,5 +30,7 @@
 @property (readwrite, retain) EZAudioDevice *selectedOutputDevice;
 - (IBAction)deviceChange:(id)sender;
 
+- (void)registerHotKeys;
+
 @end
 

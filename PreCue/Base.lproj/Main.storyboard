@@ -145,7 +145,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl" customClass="MainView">
-                        <rect key="frame" x="0.0" y="0.0" width="632" height="155"/>
+                        <rect key="frame" x="0.0" y="0.0" width="702" height="155"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-Gf-aQi">
@@ -184,7 +184,7 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-cL-RgF" userLabel="Track Position">
-                                <rect key="frame" x="277" y="12" width="337" height="21"/>
+                                <rect key="frame" x="277" y="12" width="407" height="21"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="VLO-Z1-3BH"/>
                                 <connections>
                                     <binding destination="XfG-lQ-9wD" name="value" keyPath="trackCurrentFrame" previousBinding="FPe-oD-RDH" id="84c-AX-IaF"/>
@@ -214,6 +214,22 @@
                                     <binding destination="XfG-lQ-9wD" name="selectedObject" keyPath="selectedOutputDevice" previousBinding="zjS-iZ-A2i" id="Da4-pk-QQG"/>
                                 </connections>
                             </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-92-gdU">
+                                <rect key="frame" x="277" y="39" width="58" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Progress" id="6KK-6t-kYk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-Uh-517">
+                                <rect key="frame" x="128" y="116" width="132" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cmd+P or drop track" id="0RJ-Uz-Dq6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1fm-cL-RgF" secondAttribute="trailing" constant="20" id="4tn-VG-Y9p"/>
@@ -228,7 +244,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="qXl-m8-fbZ"/>
             </objects>
-            <point key="canvasLocation" x="151" y="597.5"/>
+            <point key="canvasLocation" x="186" y="597.5"/>
         </scene>
     </scenes>
 </document>

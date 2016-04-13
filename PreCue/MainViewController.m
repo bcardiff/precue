@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "EZAudio/EZAudioUtilities.h"
+#import <Carbon/Carbon.h>
+
 
 @implementation MainViewController
 
@@ -22,6 +24,7 @@
     self.selectedOutputDevice = [EZAudioDevice currentOutputDevice];
     
     self.volumenValue = 100;
+    [self registerHotKeys];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -76,6 +79,51 @@
 //            weakSelf.positionLabel.integerValue = framePosition;
 //        }
     });
+}
+
+- (void)registerHotKeys {
+    EventHotKeyRef gMyHotKeyRef;
+    EventHotKeyID gMyHotKeyID;
+    EventTypeSpec eventType;
+    eventType.eventClass=kEventClassKeyboard;
+    eventType.eventKind=kEventHotKeyPressed;
+    InstallApplicationEventHandler(&MyHotKeyHandler, 1, &eventType, (__bridge void*) self, NULL);
+    gMyHotKeyID.signature='rml1';
+    gMyHotKeyID.id=1;
+    RegisterEventHotKey(kVK_ANSI_P, cmdKey, gMyHotKeyID,GetApplicationEventTarget(), 0, &gMyHotKeyRef);
+}
+
+NSString* getSelectedItunesTrack() {
+    NSTask *task = [[NSTask alloc] init];
+    task.launchPath = @"/usr/bin/osascript";
+    NSString* script = @"tell application \"iTunes\" to location of selection";
+    task.arguments  = @[@"-e", script];
+    
+    NSPipe *stdout = [NSPipe pipe];
+    [task setStandardOutput:stdout];
+    
+    [task launch];
+    [task waitUntilExit];
+    
+    NSFileHandle * read = [stdout fileHandleForReading];
+    NSData * dataRead = [read readDataToEndOfFile];
+    NSString * stringRead = [[NSString alloc] initWithData:dataRead encoding:NSUTF8StringEncoding];
+    
+    return stringRead;
+}
+
+OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent, void *data) {
+    NSString* itunesTrack = getSelectedItunesTrack();
+    NSString* buildPath = [[itunesTrack stringByReplacingOccurrencesOfString:@":" withString:@"/"]
+                 stringByReplacingOccurrencesOfString:@"alias Macintosh HD/" withString:@"/"];
+    buildPath = [buildPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSURL* fileUrl = [NSURL fileURLWithPath: buildPath
+                                isDirectory: NO];
+    
+    MainViewController *_self = (__bridge id) data;
+    [_self loadFile:fileUrl];
+
+    return noErr;
 }
 
 @end
