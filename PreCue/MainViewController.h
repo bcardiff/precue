@@ -25,6 +25,11 @@
 
 @property (readwrite, assign) double trackFrames;
 @property (readwrite, assign) double trackCurrentFrame;
+@property (readwrite, assign) NSString *formattedCurrentTime;
+@property (readwrite, assign) NSString *formattedDuration;
+@property (readwrite, assign) NSString *trackTitle;
+@property (readwrite, assign) NSString *trackArtist;
+
 
 @property (readwrite, retain) NSArray *outputDevices;
 @property (readwrite, retain) EZAudioDevice *selectedOutputDevice;

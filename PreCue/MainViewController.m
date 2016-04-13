@@ -23,7 +23,7 @@
 
     self.selectedOutputDevice = [EZAudioDevice currentOutputDevice];
     
-    self.volumenValue = 100;
+    self.volumenValue = 55;
     [self registerHotKeys];
 }
 
@@ -36,6 +36,10 @@
 - (void)loadFile:(NSURL *)fileURL {
     EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:fileURL];
     
+    self.formattedDuration = audioFile.formattedDuration;
+    self.trackArtist = [audioFile.metadata objectForKey:@"artist"];
+    self.trackTitle = [audioFile.metadata objectForKey:@"title"];
+    self.formattedCurrentTime = audioFile.formattedCurrentTime;
     self.trackFrames = [audioFile totalFrames];
     self.trackCurrentFrame = 0;
 
@@ -69,15 +73,10 @@
         inAudioFile:(EZAudioFile *)audioFile
 {
     __weak typeof (self) weakSelf = self;
-    // Update any UI controls including sliders and labels
-    // display current time/duration
+
     dispatch_async(dispatch_get_main_queue(), ^{
         weakSelf.trackCurrentFrame = framePosition;
-//        if (!weakSelf.positionSlider.highlighted)
-//        {
-//            weakSelf.positionSlider.floatValue = (float)framePosition;
-//            weakSelf.positionLabel.integerValue = framePosition;
-//        }
+        weakSelf.formattedCurrentTime = audioFile.formattedCurrentTime;
     });
 }
 
@@ -114,8 +113,8 @@ NSString* getSelectedItunesTrack() {
 
 OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent, void *data) {
     NSString* itunesTrack = getSelectedItunesTrack();
-    NSString* buildPath = [[itunesTrack stringByReplacingOccurrencesOfString:@":" withString:@"/"]
-                 stringByReplacingOccurrencesOfString:@"alias Macintosh HD/" withString:@"/"];
+    NSString* buildPath = [itunesTrack stringByReplacingOccurrencesOfString:@":" withString:@"/"];
+    buildPath = [buildPath substringFromIndex:[buildPath rangeOfString:@"/"].location];
     buildPath = [buildPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSURL* fileUrl = [NSURL fileURLWithPath: buildPath
                                 isDirectory: NO];
