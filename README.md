@@ -8,6 +8,6 @@ Go to iTunes and press `CMD + P` or drag & drop files in the PreCue window for i
 This will not affect the track been played on iTunes.
 It only works for songs locally stored on your computer.
 
-![screenshot](https://cloud.githubusercontent.com/assets/459923/14505761/f4dbe70a-0190-11e6-8e56-d94d103321e4.png)
+![screenshot](https://cloud.githubusercontent.com/assets/459923/14534428/8fcf677e-023f-11e6-83dd-d0da23d4eb0b.png)
 
 Together with iTunes built-in _Up next_ playlist you are able to do some DJ-ing.
