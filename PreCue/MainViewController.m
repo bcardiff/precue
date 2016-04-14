@@ -22,7 +22,12 @@
 //    [EZAudioUtilities setShouldExitOnCheckResultFail: true];
 
     self.selectedOutputDevice = [EZAudioDevice currentOutputDevice];
-    
+
+    self.trackFrames = 100;
+    self.trackCurrentFrame = 0;
+    self.trackArtist = @"CMD+P in iTunes or drag and drop file to precue song";
+    self.trackTitle = @"";
+
     self.volumenValue = 40;
     [self volumenMoved: self];
     [self registerHotKeys];
@@ -114,9 +119,14 @@ NSString* getSelectedItunesTrack() {
 
 OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent, void *data) {
     NSString* itunesTrack = getSelectedItunesTrack();
+    if (itunesTrack.length == 0) {
+        return noErr;
+    }
+    
     NSString* buildPath = [itunesTrack stringByReplacingOccurrencesOfString:@":" withString:@"/"];
     buildPath = [buildPath substringFromIndex:[buildPath rangeOfString:@"/"].location];
     buildPath = [buildPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
     NSURL* fileUrl = [NSURL fileURLWithPath: buildPath
                                 isDirectory: NO];
     
