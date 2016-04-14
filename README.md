@@ -2,6 +2,8 @@
 
 This is a little and **ugly** app that allows you to precue tracks from iTunes.
 
+[Download latest release](https://github.com/bcardiff/precue/releases/latest)
+
 Open the app, choose the output device and volume to use.
 Go to iTunes and press `CMD + P` or drag & drop files in the PreCue window for it to start.
 
