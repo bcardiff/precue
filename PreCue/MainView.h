@@ -18,6 +18,6 @@
 @interface MainView : NSView <NSDraggingDestination>
 
 @property (nonatomic, assign) IBOutlet id<MainViewDelegate> mainDelegate;
-@property (nonatomic, assign) IBOutlet NSSlider* trackProgress;
+@property (nonatomic, assign) IBOutlet NSProgressIndicator* trackProgress;
 
 @end

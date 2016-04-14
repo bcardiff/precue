@@ -22,7 +22,10 @@
 //    [EZAudioUtilities setShouldExitOnCheckResultFail: true];
 
     self.selectedOutputDevice = [EZAudioDevice currentOutputDevice];
-    
+
+    self.trackFrames = 100;
+    self.trackCurrentFrame = 0;
+
     self.volumenValue = 40;
     [self volumenMoved: self];
     [self registerHotKeys];
